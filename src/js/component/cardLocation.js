@@ -9,7 +9,7 @@ export const CardLocation = (props) => {
             <div className="card-body">
             <h5 className="card-title">{props.name}</h5>
             <p className="card-text">Type: {props.type}</p>
-            <p className="card-text">Dimesion: {props.dimension}</p>
+            <p className="card-text">Dimension: {props.dimension}</p>
             <p className="card-text">{props.description}</p>
             <div className="d-flex justify-content-between">
                 <button className="btn btn-outline-primary">Learn More!</button>

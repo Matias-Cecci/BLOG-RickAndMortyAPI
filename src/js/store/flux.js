@@ -16,8 +16,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const response = await fetch('https://rickandmortyapi.com/api/location')
 				const data = await response.json()
 				setStore({locations: data.results})
+			},
+			setFavorites: (name) => {
+				const store = getStore();
+				setStore({favorites: [...store.favorites, name]})
 			}
-			
 			
 		}
 	};

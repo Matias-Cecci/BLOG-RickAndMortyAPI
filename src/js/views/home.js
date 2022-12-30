@@ -25,8 +25,12 @@ export const Home = () => {
 						species = {item.species}
 						gender = {item.gender}
 						origin = {item.origin.name}
-					/>)
+						
+					/>
+					
+				)
 				})}
+	
 			</div>
 			<h1>LOCATIONS</h1>
 			<div className="row flex-nowrap overflow-auto">

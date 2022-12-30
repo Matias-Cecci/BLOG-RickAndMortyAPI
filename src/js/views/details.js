@@ -8,7 +8,7 @@ export const Details = props => {
 	const params = useParams();
 	return (
 		<div className="">
-
+			HOLAAAAAAAAAAA
 		</div>
 	);
 };
