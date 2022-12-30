@@ -14,9 +14,9 @@ export const Home = () => {
 	},[])
 
 	return(
-		<div className="text-center mt-5">
+		<div className="container text-center mt-5">
 			<h1>CHARACTERS</h1>
-			<div className="row">
+			<div className="row flex-nowrap overflow-auto">
 				{store.characters.map((item)=>{
 					console.log(item)
 					return (<CardCharacter key={item.id} 
@@ -29,7 +29,7 @@ export const Home = () => {
 				})}
 			</div>
 			<h1>LOCATIONS</h1>
-			<div className="row">
+			<div className="row flex-nowrap overflow-auto">
 				{store.locations.map((item)=>{
 					console.log(item)
 					return (<CardLocation key={item.id} 
