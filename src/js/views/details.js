@@ -6,6 +6,8 @@ import { Context } from "../store/appContext";
 export const Details = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
+
+	//Acá debería poner un condicional que dependiendo de que boton toque (Character or Location) me muestre una u otra cosa
 	return (
 		<div className="">
 			HOLAAAAAAAAAAA

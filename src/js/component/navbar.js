@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 
-	const context = useContext(Context);
+	const { store, actions } = useContext(Context);
+
 
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
@@ -14,7 +15,27 @@ export const Navbar = () => {
 				</Link>
 				<div className="dropdown ml-auto">
 					<Link to="/">
-						<button className="btn btn-primary">Favorites []</button>
+						<div className="btn-group" role="group">
+							<button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+								Favorites  {store.favorites.length}
+							</button>
+							<ul className="dropdown-menu">
+								<li>
+									{store.favorites ? (
+										store.favorites.map((elem, i) => (
+									<div className="dropdown-item d-flex justify-content-around" key={i} id={++i} title={elem.item}>
+										{elem.item}
+										<div id={i} onClick={() => actions.removeFavorites(i)}>
+											<i className="fa-regular fa-circle-xmark"></i>
+										</div>
+									</div>
+										))
+									) : (
+										<span>(...)</span>
+									)}
+								</li>
+							</ul>
+						</div>
 					</Link>
 				</div>
 			</div>

@@ -17,11 +17,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const data = await response.json()
 				setStore({locations: data.results})
 			},
-			setFavorites: (name) => {
+			setFavorites: (item ) => {
 				const store = getStore();
-				setStore({favorites: [...store.favorites, name]})
+				setStore({favorites: [...store.favorites, {item} ]})
+			},
+			removeFavorites: (id) =>{
+				let value = document.getElementById(id).title;
+				const store = getStore();
+				setStore({ favorites: store.favorites.filter(fav => fav.item !== value) });
 			}
-			
 		}
 	};
 };

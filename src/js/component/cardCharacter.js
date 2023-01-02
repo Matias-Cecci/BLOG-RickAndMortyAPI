@@ -18,16 +18,15 @@ export const CardCharacter = (props) => {
                 <p className="card-text text-start">Origin: {props.origin}</p>
                 <p className="card-text text-start">{props.description}</p>
                 <div className="d-flex justify-content-between">
-                <Link to="/details/:theid">
-                    <button className="btn btn-outline-primary">
-                        Learn More!
+                    <Link to="/details/:theid">
+                        <button className="btn btn-outline-primary">
+                            Learn More!
+                        </button>
+                    </Link>
+                    <button onClick={() => actions.setFavorites(props.name)}
+                    className="btn btn-outline-warning">
+                            <i className="fa-regular fa-heart "></i>
                     </button>
-                </Link>
-                <button onClick={(e) =>{
-                    actions.setFavorites(props.name)
-                }} className="btn btn-outline-warning">
-                        <i className="fa-regular fa-heart "></i>
-                </button>
                 </div>
             </div>
         </div>
