@@ -5,8 +5,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			locations: [],
 			episodes: [],
 			favorites: [],
-			characterDetail: {},
-			locationDetail: []
 		},
 		actions: {
 			getCharacters: async () => {
@@ -26,14 +24,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			setFavorites: (item ) => {
 				const store = getStore();
-				setStore({favorites: [...store.favorites, {item} ]})
-			},
-			removeFavorites: (id) =>{
-				let value = document.getElementById(id).title;
-				const store = getStore();
-				setStore({ favorites: store.favorites.filter(fav => fav.item !== value) });
-			}
-			
+				if(!store.favorites.includes(item)){
+				setStore({favorites: [...store.favorites, item ]})
+				}else {
+					setStore({favorites: store.favorites.filter((favItem) => favItem !== item)})
+				}
+			}			
 		}
 	};
 };
