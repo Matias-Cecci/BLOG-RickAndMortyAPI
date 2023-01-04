@@ -15,11 +15,11 @@ export const CardEpisode = (props) => {
                 <div className="card-body">
                     <h5 className="card-title">{props.name}</h5>
                     <hr />
+                    <p className="card-text text-start visually-hidden">{props.id}</p>
                     <p className="card-text text-start">Air date: {props.air_date}</p>
-                    <p className="card-text text-start">Episode: {props.episode}</p>
                     <p className="card-text text-start">URL: {props.url}</p>
                     <div className="d-flex justify-content-between">
-                            <Link to="/details/:theid">
+                            <Link to={"/details/episode/" + props.id}>
                                 <button className="btn btn-outline-primary">
                                     Learn More!
                                 </button>

@@ -19,14 +19,14 @@ export const Home = () => {
 		<div className="container text-center mt-2">
 			<h2 className="my-3">CHARACTERS</h2>
 			<div className="container row flex-nowrap overflow-auto">
-				{store.characters.map((item)=>{
-					return (<CardCharacter key={item.id} 
-						id = {item.id}
-						name = {item.name}
-						image = {item.image}
-						species = {item.species}
-						gender = {item.gender}
-						origin = {item.origin.name}
+				{store.characters.map((character)=>{
+					return (<CardCharacter key={character.id} 
+						id = {character.id}
+						name = {character.name}
+						image = {character.image}
+						species = {character.species}
+						gender = {character.gender}
+						status = {character.status}
 					/>
 				)
 				})}
@@ -34,23 +34,25 @@ export const Home = () => {
 
 			<h2 className="my-3">LOCATIONS</h2>
 			<div className="row flex-nowrap overflow-auto">
-				{store.locations.map((item)=>{
-					return (<CardLocation key={item.id} 
-						name = {item.name}
-						type = {item.type}
-						dimension = {item.dimension}
+				{store.locations.map((location)=>{
+					return (<CardLocation key={location.id} 
+						id = {location.id}
+						name = {location.name}
+						type = {location.type}
+						dimension = {location.dimension}
 					/>)
 				})}
 			</div>
 
 			<h2 className="my-3">EPISODES</h2>
 			<div className="row flex-nowrap overflow-auto">
-				{store.episodes.map((item)=>{
-					return (<CardEpisode key={item.id} 
-						name = {item.name}
-						air_date = {item.air_date}
-						dimension = {item.episode}
-						url = {item.url}
+				{store.episodes.map((episode)=>{
+					return (<CardEpisode key={episode.id} 
+						id = {episode.id}
+						name = {episode.name}
+						air_date = {episode.air_date}
+						dimension = {episode.episode}
+						url = {episode.url}
 					/>)
 				})}
 			</div>

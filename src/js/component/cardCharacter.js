@@ -14,14 +14,14 @@ export const CardCharacter = (props) => {
                         <div className="card-body">
                             <h5 className="card-title">{props.name}</h5>
                             <hr />
+                            <p className="card-text text-start">Status: {props.status}</p>
                             <p className="card-text text-start visually-hidden">{props.id}</p>
-                            <p className="card-text text-start">{props.status}</p>
                             <p className="card-text text-start">Specie: {props.species}</p>
                             <p className="card-text text-start">Gender: {props.gender}</p>
-                            <p className="card-text text-start">Origin: {props.origin}</p>
+                            <p className="card-text text-start">{props.origin}</p>
                             <p className="card-text text-start">{props.description}</p>
                             <div className="d-flex justify-content-between">
-                                <Link to={"/details/" + props.id}>
+                                <Link to={"/details/character/" + props.id}>
                                     <button className="btn btn-outline-primary">
                                         Learn More!
                                     </button>

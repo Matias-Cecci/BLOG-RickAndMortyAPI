@@ -20,7 +20,7 @@ export const CardLocation = (props) => {
                     <p className="card-text text-start">Dimension: {props.dimension}</p>
                     <p className="card-text text-start">{props.description}</p>
                     <div className="d-flex justify-content-between">
-                            <Link to="/details/:theid">
+                            <Link to={"/details/location/" + props.id}>
                                 <button className="btn btn-outline-primary">
                                     Learn More!
                                 </button>
