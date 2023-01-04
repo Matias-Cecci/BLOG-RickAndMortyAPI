@@ -4,7 +4,7 @@ import "../../styles/home.css";
 import { Link } from "react-router-dom";
 
 
-export const CardLocation = (props) => {
+export const CardEpisode = (props) => {
 
     const {store, actions} = useContext(Context);
     
@@ -15,10 +15,9 @@ export const CardLocation = (props) => {
                 <div className="card-body">
                     <h5 className="card-title">{props.name}</h5>
                     <hr />
-                    <p className="card-text text-start visually-hidden">{props.id}</p>
-                    <p className="card-text text-start">Type: {props.type}</p>
-                    <p className="card-text text-start">Dimension: {props.dimension}</p>
-                    <p className="card-text text-start">{props.description}</p>
+                    <p className="card-text text-start">Air date: {props.air_date}</p>
+                    <p className="card-text text-start">Episode: {props.episode}</p>
+                    <p className="card-text text-start">URL: {props.url}</p>
                     <div className="d-flex justify-content-between">
                             <Link to="/details/:theid">
                                 <button className="btn btn-outline-primary">
