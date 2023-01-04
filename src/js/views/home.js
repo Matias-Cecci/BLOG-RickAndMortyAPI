@@ -14,11 +14,12 @@ export const Home = () => {
 	},[])
 
 	return(
-		<div className="container text-center mt-5">
-			<h1>CHARACTERS</h1>
-			<div className="row flex-nowrap overflow-auto">
+		<div className="container text-center mt-2">
+			<h1 className="my-3">CHARACTERS</h1>
+			<div className="container row flex-nowrap overflow-auto">
 				{store.characters.map((item)=>{
 					return (<CardCharacter key={item.id} 
+						id = {item.id}
 						name = {item.name}
 						image = {item.image}
 						species = {item.species}
@@ -29,7 +30,7 @@ export const Home = () => {
 				})}
 			</div>
 
-			<h1>LOCATIONS</h1>
+			<h1 className="my-3">LOCATIONS</h1>
 			<div className="row flex-nowrap overflow-auto">
 				{store.locations.map((item)=>{
 					return (<CardLocation key={item.id} 

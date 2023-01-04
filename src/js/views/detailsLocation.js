@@ -1,15 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { CardCharacter } from "../component/cardCharacter";
 
-export const Details = () => {
+export const DetailsLocation = props => {
 	const { store, actions } = useContext(Context);
-	//const params = useParams();
-	//console.log(params)
+	const params = useParams();
 
-	let {id} = useParams();
+	
 	return (
 		<div className="">
 			HOLAAAAAAAAAAA

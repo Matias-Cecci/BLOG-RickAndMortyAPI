@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: [],
 			locations: [],
 			favorites: [],
-			detailsInfo: {}
+			characterDetail: {},
+			locationDetail: []
 		},
 		actions: {
 			getCharacters: async () => {
@@ -26,6 +27,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 				setStore({ favorites: store.favorites.filter(fav => fav.item !== value) });
 			}
+			
 		}
 	};
 };
