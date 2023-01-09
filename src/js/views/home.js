@@ -10,52 +10,55 @@ export const Home = () => {
 	const {store, actions} = useContext(Context);
 
 	useEffect(() => {
-		actions.getCharacters();
-		actions.getLocations();
-		actions.getEpisodes();
+
 	},[])
 
 	return(
-		<div className="container text-center mt-2">
-			<h2 className="my-3">CHARACTERS</h2>
-			<div className="container row flex-nowrap overflow-auto">
-				{store.characters.map((character)=>{
-					return (<CardCharacter key={character.id} 
-						id = {character.id}
-						name = {character.name}
-						image = {character.image}
-						species = {character.species}
-						gender = {character.gender}
-						status = {character.status}
-					/>
-				)
-				})}
+		<div className="container text-center mt-3">
+			<h2 className="my-3 fs-1">CHARACTERS</h2>
+			<div className="container">
+				<div className="container row flex-nowrap overflow-auto">
+					{store.characters.results ? store.characters.results.map((character)=>{
+						return (<CardCharacter key={character.id} character={character}/>
+					)
+					}) : "Loading..."}
+					
+				</div>
+				<div className="my-4">
+					<button type="button" className="btn btn-outline-dark" onClick={() => actions.getCharacters(store.characters.info.prev)}><i className="fa-solid fa-angles-left"></i></button>
+					<button type="button" className="btn btn-outline-dark" onClick={() => actions.getCharacters(store.characters.info.next)}> <i className="fa-solid fa-angles-right"></i> </button>
+				</div>
+				<hr />
 			</div>
 
-			<h2 className="my-3">LOCATIONS</h2>
-			<div className="row flex-nowrap overflow-auto">
-				{store.locations.map((location)=>{
-					return (<CardLocation key={location.id} 
-						id = {location.id}
-						name = {location.name}
-						type = {location.type}
-						dimension = {location.dimension}
-					/>)
-				})}
+
+			<h2 className="my-3 fs-1">LOCATIONS</h2>
+			<div className="container">
+				<div className="container row flex-nowrap overflow-auto">
+					{store.locations.results ? store.locations.results.map((location)=>{
+						return (<CardLocation key={location.id} location={location}	/>)
+					}) : "Loading..."}
+				</div>
+				<div className="my-4">
+						<button type="button" className="btn btn-outline-dark" onClick={() => actions.getLocations(store.locations.info.prev)}><i className="fa-solid fa-angles-left"></i></button>
+						<button type="button" className="btn btn-outline-dark" onClick={() => actions.getLocations(store.locations.info.next)}> <i className="fa-solid fa-angles-right"></i> </button>
+				</div>
+				<hr />
 			</div>
 
-			<h2 className="my-3">EPISODES</h2>
-			<div className="row flex-nowrap overflow-auto">
-				{store.episodes.map((episode)=>{
-					return (<CardEpisode key={episode.id} 
-						id = {episode.id}
-						name = {episode.name}
-						air_date = {episode.air_date}
-						dimension = {episode.episode}
-						url = {episode.url}
-					/>)
-				})}
-			</div>
+			<h2 className="my-3 fs-1">EPISODES</h2>
+			<div className="container">
+				<div className="container row flex-nowrap overflow-auto">
+					{store.episodes.results ? store.episodes.results.map((episode)=>{
+						return (<CardEpisode key={episode.id} episode={episode}	/>)
+					}) : "Loading..."}
+				</div>
+					<div className="my-4 ">
+						<button type="button" className="btn btn-outline-dark" onClick={() => actions.getEpisodes(store.episodes.info.prev)}><i className="fa-solid fa-angles-left"></i></button>
+						<button type="button" className="btn btn-outline-dark" onClick={() => actions.getEpisodes(store.episodes.info.next)}> <i className="fa-solid fa-angles-right"></i> </button>
+					</div>
+				<hr />
+				</div>
 		</div>
 		)
 };
